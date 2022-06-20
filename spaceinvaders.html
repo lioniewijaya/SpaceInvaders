@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <style>
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(41, 41, 36);
+            }
+            .column {
+                float: left;
+                width: 50%;
+            }
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+        </style>
+        <script src="./dist/spaceinvaders.js"></script>
+    </head>
+    <body>
+        <h1>Space Invaders</h1>
+            <div class="row">
+            <div class="column">
+            <p>
+            Hello there space hero! You are tasked to guard your ship from the space invaders.
+            <br>
+            Shoot all the aliens and avoid bullets to proceed to the next level!
+            </p>
+            <h2> How to Play?</h2>
+            </p>
+            Ship can only move horizontally.
+            <br>
+            - Press < (arrow right) to move to the right.
+            <br>
+            - Press > (arrow left) to move to the left.
+            <br>
+            <br>
+            Both aliens and ship can shoot bullets. 
+            <br>
+            Bullet can destroy both ship and alien and damage shield.
+            <br>
+            A bullet cannot destroy another bullet.
+            <br>
+            - Press ^ (arrow up) to shoot.
+            <br>
+            <br>
+            A shield protects ship from getting destroyed. 
+            <br>
+            Part of damaged shield can be passed by bullet.
+            <br>
+            <br>
+            If ship is destroyed, player lose and game is put on halt until player choose to restart. 
+            <br>
+            Level and score are resetted.
+            <br>
+            - Press space bar to restart game after player died.
+            <br>
+            <br>
+            For every alien destroyed, player scores a point. 
+            <br>
+            Aliens may speed up at some point when player have killed some number of aliens in the level.
+            <br>
+            If player destroyed all aliens on screen, player proceeds to the next level.
+            <br>
+            </p>
+            </div>
+            <div class="column">
+            <svg id="canvas" width="600" height="600" style="background-color:black"> 
+                <text id="scoreboard" x= 10 y= 60 fill="white" font-size="20px"></text>
+                <text id="level" x= 10 y= 30 fill="white" font-size="20px"></text>
+                <g id="lose" visibility="hidden">
+                <text x=175 y=275 fill="red" font-size="50px">Game over.</text>
+                <text x=60 y=325 fill="red" font-size="50px">Press space to restart.</text>
+                </g>
+                <ellipse id="ship" cx= 300 cy= 570 rx=10 ry=10 fill= "lightblue">
+                </ellipse>
+            </svg>
+            </div>
+        </div>
+    </body>
+</html>
